@@ -24,4 +24,22 @@ public class PuntoGeometrico {
         //  Formula:
         //  Distancia2 = ( X1 – X2 ) 2 + (Y1 – Y2) 2 
     }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    
 }
