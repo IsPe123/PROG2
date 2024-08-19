@@ -8,14 +8,7 @@ public class Episodio {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.flag = false;
-        setCalificacion(-1);
-    }
-
-    public Episodio(String titulo, String descripcion, boolean flag, int calificacion) {
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.flag = flag;
-        this.calificacion = calificacion;
+        this.calificacion = -1;
     }
 
     public String getTitulo() {
@@ -34,7 +27,7 @@ public class Episodio {
         this.descripcion = descripcion;
     }
 
-    public boolean isFlag() {
+    public boolean getFlag() {
         return flag;
     }
 
@@ -48,13 +41,12 @@ public class Episodio {
 
     public void setCalificacion(int calificacion) {
         if (calificacion < 0 || calificacion > 5) {
-            this.calificacion = -1;
+            System.out.println("Valor invalido, no se hicieron cambios");
+        } else if (!getFlag()) {
+            System.out.println("Necesita ver el episodio para calificarlo");
         } else {
             this.calificacion = calificacion;
-        }
-        
+        }   
     }
-    
-
 
 }
