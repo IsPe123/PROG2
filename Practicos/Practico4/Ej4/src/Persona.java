@@ -16,6 +16,14 @@ public abstract class Persona {
         setEstado(estado);;
     }
 
+    public String conocerEstado() {
+        if (estados[estado] == "En concentración") {
+            return "Esta disponible";
+        } else {
+            return "No esta disponible";
+        }
+    }
+
     public String getNombre() {
         return nombre;
     }
