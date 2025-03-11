@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 import filtros.Filtro;
 
-public abstract class PaqueteViaje {
+public abstract class PaqueteViaje implements Comparable<PaqueteViaje> {
     private int cantPersonas;
     private int ID;
     
@@ -16,6 +16,10 @@ public abstract class PaqueteViaje {
     public abstract double getCosto();
     public abstract LocalDate getFechaDePago();
     public abstract ArrayList<PaqueteViaje> buscar(Filtro ff);
+    public ArrayList<PaqueteViaje> buscar(Filtro ff, Comparator cc) {
+
+    }
+
 
     public int getCantPersonas() {
         return cantPersonas;
@@ -30,7 +34,11 @@ public abstract class PaqueteViaje {
     }
 
     public void setID(int iD) {
-        ID = iD;
+        this.ID = iD;
+    }
+
+    public int compareTo(PaqueteViaje pp) {
+        return this.getCantPersonas().compareTo(pp.getCantPersonas());
     }
 
 }
